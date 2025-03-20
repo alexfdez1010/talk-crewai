@@ -11,6 +11,7 @@ wheels/
 
 # LLM credentials
 .env
+.streamlit/
 
 # Visual Code
 .vscode/
