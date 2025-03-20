@@ -1,19 +1,23 @@
-import streamlit as st
-import requests
 import os
-from typing import Dict, List, Any
-from dotenv import load_dotenv
-from crewai import Agent, Task, Crew, Flow
-from crewai.flow import start, and_, listen
-from pydantic import BaseModel, Field
-from datetime import datetime
+import sqlite3
 
 # Workaround to work on Streamlit cloud
-import sqlite3
 if sqlite3.sqlite_version_info < (3, 35, 0):
-    sqlite3.version = "3.35.0"
-    sqlite3.sqlite_version = "3.35.0"
-    sqlite3.sqlite_version_info = (3, 35, 0)
+    # Install pysqlite-binary
+    os.system("pip install pysqlite3-binary")
+    __import__('pysqlite3')
+    import sys
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+from datetime import datetime
+from typing import Any, Dict, List
+
+import requests
+import streamlit as st
+from crewai import Agent, Crew, Flow, Task
+from crewai.flow import and_, listen, start
+from dotenv import load_dotenv
+from pydantic import BaseModel, Field
 
 # Set page config
 st.set_page_config(
