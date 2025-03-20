@@ -5,4 +5,3 @@ jupyter
 IPython
 streamlit
 watchdog
-sqlite3>=3.35.0
