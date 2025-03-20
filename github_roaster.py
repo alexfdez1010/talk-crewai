@@ -1,11 +1,3 @@
-import os
-import sqlite3
-
-# Workaround to work on Streamlit cloud
-if sqlite3.sqlite_version_info < (3, 35, 0):
-    # Install pysqlite-binary
-    os.system("pip install pysqlite3-binary")
-
 from datetime import datetime
 from typing import Any, Dict, List
 
