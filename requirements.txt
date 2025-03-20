@@ -1,5 +1,7 @@
 crewai
 crewai[tools]
-dotenv
+python-dotenv
 jupyter
 IPython
+streamlit
+watchdog
