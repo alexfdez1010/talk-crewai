@@ -5,9 +5,6 @@ import sqlite3
 if sqlite3.sqlite_version_info < (3, 35, 0):
     # Install pysqlite-binary
     os.system("pip install pysqlite3-binary")
-    import('pysqlite3')
-    import sys
-    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 from datetime import datetime
 from typing import Any, Dict, List
