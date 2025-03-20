@@ -8,6 +8,13 @@ from crewai.flow import start, and_, listen
 from pydantic import BaseModel, Field
 from datetime import datetime
 
+# Workaround to work on Streamlit cloud
+import sqlite3
+if sqlite3.sqlite_version_info < (3, 35, 0):
+    sqlite3.version = "3.35.0"
+    sqlite3.sqlite_version = "3.35.0"
+    sqlite3.sqlite_version_info = (3, 35, 0)
+
 # Set page config
 st.set_page_config(
     page_title="GitHub Roaster",
