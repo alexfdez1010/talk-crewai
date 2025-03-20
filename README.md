@@ -8,25 +8,17 @@ Este repositorio contiene los materiales para la charla "Organizaciones Intelige
 
 ### Archivos Principales
 
-- **notebook.ipynb**: Jupyter Notebook con ejemplos prácticos y código ejecutable que muestra cómo implementar agentes de IA utilizando CrewAI. El notebook incluye:
-  - Introducción a CrewAI y sus conceptos fundamentales
-  - Configuración del entorno con Google AI Studio (Gemini 2.0 Flash) y LiteLLM
-  - Explicación detallada de `Crew`, `Agent`, `Tools` y `Flows`
-  - Ejemplos prácticos desde agentes básicos hasta equipos de múltiples agentes
+* **notebook.ipynb**: Jupyter Notebook con ejemplos prácticos y código ejecutable que muestra cómo implementar agentes de IA utilizando CrewAI. El notebook incluye:
+  * Introducción a CrewAI y sus conceptos fundamentales
+  * Configuración del entorno con Google AI Studio (Gemini 2.0 Flash) y LiteLLM
+  * Explicación detallada de `Crew`, `Agent`, `Tools` y `Flows`
+  * Ejemplos prácticos desde agentes básicos hasta equipos de múltiples agentes
 
-- **Organizaciones_Inteligentes_y_Sistemas_Multiagentes_en_acción.pdf**: Presentación completa en formato PDF que complementa el contenido del notebook, ofreciendo explicaciones teóricas sobre los agentes y sistemas multiagente.
+* **Organizaciones_Inteligentes_y_Sistemas_Multiagentes_en_acción.pdf**: Presentación completa en formato PDF que complementa el contenido del notebook, ofreciendo explicaciones teóricas sobre los agentes y sistemas multiagente.
 
-### Requisitos
+### Dependencias
 
 El archivo `requirements.txt` contiene todas las dependencias necesarias para ejecutar los ejemplos del notebook:
-
-```text
-crewai
-crewai[tools]
-dotenv
-jupyter
-IPython
-```
 
 ## Configuración del Entorno
 
@@ -35,6 +27,19 @@ IPython
 3. Instala las dependencias: `pip install -r requirements.txt`
 4. Configura tus credenciales de API en un archivo `.env` siguiendo el ejemplo en `.env.example`
 5. Abre el notebook con Jupyter: `jupyter notebook notebook.ipynb`
+
+## Ejecución en Desarrollo
+
+Para ejecutar `github_roaster.py` en modo desarrollo:
+
+1. Asegúrate de tener instaladas las dependencias: `pip install -r requirements.txt`
+2. Crea el archivo `.streamlit/secrets.toml` en la raíz del proyecto con tu clave API de Gemini:
+
+```toml
+GEMINI_API_KEY = "tu_clave_api_aqui"
+```
+
+3. Ejecuta la aplicación con Streamlit: `streamlit run github_roaster.py`
 
 ## Licencia
 
