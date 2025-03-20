@@ -5,7 +5,7 @@ import sqlite3
 if sqlite3.sqlite_version_info < (3, 35, 0):
     # Install pysqlite-binary
     os.system("pip install pysqlite3-binary")
-    __import__('pysqlite3')
+    import('pysqlite3')
     import sys
     sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
@@ -16,7 +16,6 @@ import requests
 import streamlit as st
 from crewai import Agent, Crew, Flow, Task
 from crewai.flow import and_, listen, start
-from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 
 # Set page config
