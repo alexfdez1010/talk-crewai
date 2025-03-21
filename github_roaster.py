@@ -252,6 +252,8 @@ class GitHubRoasterFlow(Flow):
             }
         )
 
+        roast = roast.raw.replace("```markdown", "").replace("```", "")
+
         return self.state["user_info"], roast
 
 
